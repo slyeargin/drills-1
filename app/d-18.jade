@@ -1,0 +1,20 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Auto Update
+    link(rel='stylesheet', href='./css/d-18.css')
+  body
+    h1 Auto Update
+
+    input#symbol(type='text' placeholder='Example: AMZN,APPL,GOOG,MSFT')
+    button#get Add Auto-Update
+
+    table#output
+      thead
+        th Symbol
+        th Quote
+      tbody
+
+    script(src='./js/vendor/jquery-2.1.0.js')
+    script(src='./js/source/d-18.js')
