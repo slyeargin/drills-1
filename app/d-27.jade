@@ -1,0 +1,19 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Weather Map
+    link(rel='stylesheet', href='./css/d-27.css')
+  body
+    h1 Weather Map
+
+    input#zip(type='number' placeholder='Enter a ZIP code.')
+    button#add Add to Map
+
+    #chartdiv
+
+    script(src='./js/vendor/jquery-2.1.0.js')
+    script(src='http://www.amcharts.com/lib/3/ammap.js')
+    script(src='http://www.amcharts.com/lib/3/maps/js/worldLow.js')
+    script(src='http://www.amcharts.com/lib/3/themes/none.js')
+    script(src='./js/source/d-27.js')
