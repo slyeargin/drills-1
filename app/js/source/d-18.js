@@ -15,7 +15,9 @@
       buildTable(symbolArray[i]);
     }
 
-    setInterval(keepFresh(symbolArray),2000);
+    setInterval(function () {
+      keepFresh(symbolArray);
+    },10000);
 
   }
 
