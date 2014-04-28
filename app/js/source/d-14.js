@@ -5,8 +5,6 @@
 
   function init(){
     loadDivs();
-    $('.rectangle').click(selectSmallDiv);
-    $('body').keydown(move);
   }
 
   var h = window.innerHeight;
@@ -37,57 +35,5 @@
     }
   }
 
-  function selectSmallDiv() {
-    event.stopPropagation();
-    $('.selected').removeClass('selected');
-    $(this).addClass('selected');
-  }
-
-
-  function move(event){
-    if(event.keyCode === 37 || event.keyCode === 38 || event.keyCode === 39 || event.keyCode === 40) {
-      event.preventDefault();
-    }
-
-    var moveTop;
-    var moveLeft;
-    var newTop;
-    var newLeft;
-
-    moveTop = $('.selected').css('top');
-    moveLeft = $('.selected').css('left');
-
-    moveTop = moveTop.replace('px', '');
-    moveLeft = moveLeft.replace('px', '');
-
-    moveTop *= 1;
-    moveLeft *= 1;
-
-    switch(event.keyCode){
-      case 38:
-        if (moveTop > 0) {
-          newTop = moveTop - 1;
-        }
-        break;
-      case 40:
-        if (moveTop < ($('.selected').parent().innerHeight() - ($('.selected').innerHeight()))) {
-          newTop = moveTop + 1;
-        }
-        break;
-      case 37:
-        if (moveLeft > 0){
-          newLeft = moveLeft - 1;
-        }
-        break;
-      case 39:
-        if (moveLeft < ($('.selected').parent().innerWidth() - ($('.selected').innerWidth()))){
-          newLeft = moveLeft + 1;
-        }
-        break;
-    }
-
-    $('.selected').css('top', newTop).css('left', newLeft);
-
-  }
 
 }) ();
